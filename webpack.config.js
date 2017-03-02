@@ -22,7 +22,9 @@ module.exports = {
     }]
   },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: `${srcDir}/index.html`
+    }),
     new DashboardPlugin()
   ]
 }
