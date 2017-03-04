@@ -7,7 +7,7 @@ const srcDir = resolve(__dirname, 'src')
 module.exports = {
   entry: `${srcDir}/index.js`,
   output: {
-    filename: 'bundle.js'
+      filename: 'bundle.js',
   },
   module: {
     rules: [{
@@ -19,6 +19,9 @@ module.exports = {
       test: /\.js$/,
       loader: 'babel-loader',
       exclude: /node_modules/
+    },{
+      test: /\.css$/,
+      use: [ 'style-loader', 'css-loader' ]
     }]
   },
   plugins: [
